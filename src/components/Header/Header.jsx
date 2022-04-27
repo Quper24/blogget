@@ -3,13 +3,7 @@ import Layout from '../Layout';
 import Logo from './Logo';
 import Search from './Search';
 import Auth from './Auth';
-
-const styleTitle = {
-  order: '1',
-  gridColumn: '1/4',
-  textAlign: 'center',
-  fontSize: '22px',
-}
+import Heading from './Heading';
 
 export const Header = () => {
   return (
@@ -17,7 +11,7 @@ export const Header = () => {
       <Layout>
         <div className={style.gridContainer}>
           <Logo/>
-          <h1 style={styleTitle}>заголовок</h1>
+          <Heading text='Главная'/>
           <Search/>
           <Auth auth={false} />
         </div>
