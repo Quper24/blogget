@@ -12,5 +12,6 @@ Layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
+    PropTypes.array,
   ]),
 };
