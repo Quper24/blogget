@@ -5,7 +5,14 @@ import {Text} from '../../../../../UI/Text';
 export const Content = ({title, author}) => (
   <div className={style.content}>
     <Text As='h2' className={style.title}>
-      <Text As='a' size={18} tsize={24} className={style.linkPost} href='#post'>
+      <Text
+        As='a'
+        bold
+        size={18}
+        tsize={24}
+        className={style.linkPost}
+        href='#post'
+      >
         {title}
       </Text>
     </Text>
@@ -13,6 +20,7 @@ export const Content = ({title, author}) => (
       As='a'
       size={12}
       tsize={14}
+      medium
       color='orange'
       className={style.linkAuthor}
       href='#autor'
