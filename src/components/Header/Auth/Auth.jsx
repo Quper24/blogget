@@ -30,6 +30,7 @@ export const Auth = ({token, delToken}) => {
       })
       .catch((err) => {
         console.error(err);
+        delToken();
         setAuth({});
       });
   }, [token]);
