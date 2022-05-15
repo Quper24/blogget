@@ -1,12 +1,12 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import style from './Auth.module.css';
-import {ReactComponent as LoginIcon} from './img/login.svg';
-import {urlAuth} from '../../../api/auth';
-import {Text} from '../../../UI/Text';
-import {URL_API} from '../../../api/const';
+import { ReactComponent as LoginIcon } from './img/login.svg';
+import { urlAuth } from '../../../api/auth';
+import { Text } from '../../../UI/Text';
+import { URL_API } from '../../../api/const';
 
-export const Auth = ({token, delToken}) => {
+export const Auth = ({ token, delToken }) => {
   const [auth, setAuth] = useState({});
   const [showLogout, setShowLogout] = useState(false);
 
@@ -19,14 +19,14 @@ export const Auth = ({token, delToken}) => {
       },
     })
       .then((response) => {
-        if ((response.status === 401)) {
+        if (response.status === 401) {
           throw new Error(response.status);
         }
         return response.json();
       })
-      .then(({name, icon_img: iconImg}) => {
+      .then(({ name, icon_img: iconImg }) => {
         const img = iconImg.replace(/\?.*$/, '');
-        setAuth({name, img});
+        setAuth({ name, img });
       })
       .catch((err) => {
         console.error(err);

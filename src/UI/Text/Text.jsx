@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import style from './Text.module.css';
 import PropTypes from 'prop-types';
 
-export const Text = prop => {
+export const Text = (prop) => {
   const {
     As = 'span',
     color = 'black',
@@ -20,15 +20,19 @@ export const Text = prop => {
   const classes = classNames(
     className,
     style[color],
-    {[style.center]: center},
-    {[style.medium]: medium},
-    {[style.bold]: bold},
-    {[style[`fs${size}`]]: size},
-    {[style[`fst${tsize}`]]: tsize},
-    {[style[`fsd${dsize}`]]: dsize},
+    { [style.center]: center },
+    { [style.medium]: medium },
+    { [style.bold]: bold },
+    { [style[`fs${size}`]]: size },
+    { [style[`fst${tsize}`]]: tsize },
+    { [style[`fsd${dsize}`]]: dsize },
   );
 
-  return <As className={classes} href={href}>{children}</As>;
+  return (
+    <As className={classes} href={href}>
+      {children}
+    </As>
+  );
 };
 
 Text.propTypes = {

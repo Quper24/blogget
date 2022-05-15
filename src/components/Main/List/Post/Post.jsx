@@ -4,10 +4,10 @@ import Thumbnail from './Thumbnail';
 import Content from './Content';
 import Rating from './Rating';
 import Date from './Date';
-import {ReactComponent as DelIcon} from './img/delete.svg';
+import { ReactComponent as DelIcon } from './img/delete.svg';
 
-export const Post = ({postData}) => {
-  const {title, author, ups, date} = postData;
+export const Post = ({ postData }) => {
+  const { title, author, ups, date } = postData;
   return (
     <li className={style.post}>
       <Thumbnail title={title} />
