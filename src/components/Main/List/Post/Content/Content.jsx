@@ -8,8 +8,8 @@ export const Content = ({ title, author }) => (
       <Text
         As='a'
         bold
-        size={18}
-        tsize={24}
+        size={14}
+        tsize={22}
         className={style.linkPost}
         href='#post'
       >

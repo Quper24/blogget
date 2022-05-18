@@ -7,10 +7,18 @@ import Date from './Date';
 import { ReactComponent as DelIcon } from './img/delete.svg';
 
 export const Post = ({ postData }) => {
-  const { title, author, ups, date } = postData;
+  console.log(postData);
+  const {
+    thumbnail,
+    title,
+    author,
+    ups,
+    created: date,
+  } = postData;
+
   return (
     <li className={style.post}>
-      <Thumbnail title={title} />
+      <Thumbnail thumbnail={thumbnail} title={title} />
 
       <Content title={title} author={author} />
 
