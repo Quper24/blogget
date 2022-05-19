@@ -12,6 +12,7 @@ export const Post = ({ postData }) => {
     title,
     author,
     ups,
+    selftext: markdown,
     created: date,
   } = postData;
 
@@ -19,7 +20,7 @@ export const Post = ({ postData }) => {
     <li className={style.post}>
       <Thumbnail thumbnail={thumbnail} title={title} />
 
-      <Content title={title} author={author} />
+      <Content title={title} author={author} markdown={markdown}/>
 
       <Rating ups={ups} />
 

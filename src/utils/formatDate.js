@@ -1,5 +1,5 @@
 const formatDate = date => {
-  const d = Date.now() - date;
+  const d = date * 1000 - Math.floor(Math.random() * 1000000000);
   const options = {
     year: 'numeric',
     month: 'numeric',
