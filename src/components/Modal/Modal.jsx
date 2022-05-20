@@ -45,7 +45,7 @@ export const Modal = ({ title, author, markdown, closeModal }) => {
 
         <p className={style.author}>{author}</p>
 
-        <button className={style.close}>
+        <button className={style.close} onClick={() => closeModal()}>
           <CloseIcon />
         </button>
       </div>
