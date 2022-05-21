@@ -8,6 +8,7 @@ import { ReactComponent as DelIcon } from './img/delete.svg';
 
 export const Post = ({ postData }) => {
   const {
+    id,
     thumbnail,
     title,
     author,
@@ -19,7 +20,7 @@ export const Post = ({ postData }) => {
     <li className={style.post}>
       <Thumbnail thumbnail={thumbnail} title={title} />
 
-      <Content title={title} author={author} />
+      <Content title={title} author={author} id={id}/>
 
       <Rating ups={ups} />
 
