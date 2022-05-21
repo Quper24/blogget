@@ -1,4 +1,3 @@
-/* eslint-disable no-constant-condition */
 import style from './Modal.module.css';
 import PropTypes from 'prop-types';
 import { ReactComponent as CloseIcon } from './img/close.svg';
