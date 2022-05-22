@@ -4,11 +4,10 @@ import style from './Auth.module.css';
 import { ReactComponent as LoginIcon } from './img/login.svg';
 import { urlAuth } from '../../../api/auth';
 import { Text } from '../../../UI/Text';
-import { tokenContext } from '../../../context/tokenContext';
 import { authContext } from '../../../context/authContext';
+import { delToken } from '../../../store';
 
 export const Auth = () => {
-  const { delToken } = useContext(tokenContext);
   const [showLogout, setShowLogout] = useState(false);
   const { auth, clearAuth } = useContext(authContext);
 
