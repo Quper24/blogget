@@ -7,7 +7,6 @@ import { delToken } from '../store';
 export const useAuth = () => {
   const [auth, setAuth] = useState({});
   const token = useSelector(state => state.token);
-  console.log('token: ', token);
   const dispatch = useDispatch();
 
   useEffect(() => {
