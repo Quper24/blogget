@@ -1,5 +1,4 @@
 export const setToken = (token) => {
-  console.log(1);
   localStorage.setItem('bearer', token);
 };
 
