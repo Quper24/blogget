@@ -5,7 +5,7 @@ import { ReactComponent as LoginIcon } from './img/login.svg';
 import { urlAuth } from '../../../api/auth';
 import { Text } from '../../../UI/Text';
 import { authContext } from '../../../context/authContext';
-import { delToken } from '../../../store';
+import { delToken } from '../../../store/tokenReducer';
 import { useDispatch } from 'react-redux';
 
 export const Auth = () => {
