@@ -11,8 +11,8 @@ import { Text } from '../../UI/Text';
 
 export const Modal = ({ id, closeModal }) => {
   const overlayRef = useRef(null);
-  const [post, comments] = useCommentsData(id);
-
+  const data = useCommentsData(id);
+  const { status, post, comments } = data;
   const handleClick = (e) => {
     const target = e.target;
     if (target === overlayRef.current) {
@@ -30,9 +30,9 @@ export const Modal = ({ id, closeModal }) => {
   return ReactDOM.createPortal(
     <div className={style.overlay} ref={overlayRef}>
       <div className={style.modal}>
-        {!post ? (
-          'Загрузка...'
-        ) : (
+        {status === 'loading' && 'Загрузка...'}
+        {status === 'error' && 'ошибка'}
+        {status === 'loaded' && (
           <>
             <Text As='h2' className={style.title} size={22} tsize={26}>
               {post.title}

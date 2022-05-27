@@ -4,7 +4,7 @@ import style from './Auth.module.css';
 import { ReactComponent as LoginIcon } from './img/login.svg';
 import { urlAuth } from '../../../api/auth';
 import { Text } from '../../../UI/Text';
-import { delToken } from '../../../store/tokenReducer';
+import { delToken } from '../../../store/token/tokenAction';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../../../hooks/useAuth';
 import AuthLoader from './AuthLoader';

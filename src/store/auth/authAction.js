@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { URL_API } from '../../api/const';
-import { delToken } from '../tokenReducer';
+import { delToken } from '../token/tokenAction';
 
 export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const AUTH_REQUEST_SUCCESS = 'AUTH_REQUEST_SUCCESS';
