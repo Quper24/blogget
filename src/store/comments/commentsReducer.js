@@ -12,7 +12,6 @@ const initialState = {
 };
 
 export const commentsReducer = (state = initialState, action) => {
-  console.log('action: ', action);
   switch (action.type) {
     case COMMENTS_REQUEST:
       return {

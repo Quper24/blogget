@@ -8,6 +8,7 @@ import { useCommentsData } from '../../hooks/useCommentsData';
 import Comments from '../Modal/Comments';
 import FormComment from '../Modal/FormComment';
 import { Text } from '../../UI/Text';
+import Preloader from '../../UI/Preloader';
 
 export const Modal = ({ id, closeModal }) => {
   const overlayRef = useRef(null);
@@ -30,7 +31,7 @@ export const Modal = ({ id, closeModal }) => {
   return ReactDOM.createPortal(
     <div className={style.overlay} ref={overlayRef}>
       <div className={style.modal}>
-        {status === 'loading' && 'Загрузка...'}
+        {status === 'loading' && <Preloader size={100}/>}
         {status === 'error' && 'ошибка'}
         {status === 'loaded' && (
           <>
