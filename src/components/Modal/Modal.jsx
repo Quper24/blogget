@@ -9,15 +9,18 @@ import Comments from '../Modal/Comments';
 import FormComment from '../Modal/FormComment';
 import { Text } from '../../UI/Text';
 import Preloader from '../../UI/Preloader';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export const Modal = ({ id, closeModal }) => {
+export const Modal = () => {
+  const { id, page } = useParams();
+  const navigate = useNavigate();
   const overlayRef = useRef(null);
   const data = useCommentsData(id);
   const { status, post, comments } = data;
   const handleClick = (e) => {
     const target = e.target;
     if (target === overlayRef.current) {
-      closeModal();
+      navigate(`/category/${page}`);
     }
   };
 
@@ -31,7 +34,7 @@ export const Modal = ({ id, closeModal }) => {
   return ReactDOM.createPortal(
     <div className={style.overlay} ref={overlayRef}>
       <div className={style.modal}>
-        {status === 'loading' && <Preloader size={100}/>}
+        {status === 'loading' && <Preloader size={100} />}
         {status === 'error' && 'ошибка'}
         {status === 'loaded' && (
           <>
@@ -63,7 +66,12 @@ export const Modal = ({ id, closeModal }) => {
 
             <Comments comments={comments} />
 
-            <button className={style.close} onClick={() => closeModal()}>
+            <button
+              className={style.close}
+              onClick={() => {
+                navigate(`/category/${page}`);
+              }}
+            >
               <CloseIcon />
             </button>
           </>
