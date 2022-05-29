@@ -1,4 +1,5 @@
 import {
+  CHANGE_PAGE,
   POST_REQUEST,
   POST_REQUEST_ERROR,
   POST_REQUEST_SUCCESS,
@@ -11,6 +12,7 @@ const initialState = {
   error: '',
   after: '',
   isLast: false,
+  page: '',
 };
 
 export const postReducer = (state = initialState, action) => {
@@ -44,6 +46,13 @@ export const postReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.error,
+      };
+    case CHANGE_PAGE:
+      return {
+        ...state,
+        page: action.page,
+        after: '',
+        isLast: false,
       };
     default:
       return state;

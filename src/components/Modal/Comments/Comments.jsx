@@ -6,7 +6,7 @@ import Date from '../../Main/List/Post/Date';
 export const Comments = ({ comments }) => (
   <ul className={style.list}>
     {comments.length ? (
-      comments.map((item) => (
+      comments.map((item) => item.body && (
         <li className={style.item} key={item.id}>
           <Text className={style.author} As='h3' size={18} tsize={22}>
             {item.author}
