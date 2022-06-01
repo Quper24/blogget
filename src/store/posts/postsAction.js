@@ -10,7 +10,7 @@ export const postRequestAsync = createAsyncThunk(
     const after = getState().posts.after;
     const isLast = getState().posts.isLast;
     if (!token || isLast) return;
-    console.log(page);
+
     return axios(
       `${URL_API}/${page}?limit=10&${after ? `after=${after}` : ''}`,
       {
