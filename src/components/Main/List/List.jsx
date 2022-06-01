@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useParams } from 'react-router-dom';
 import { postRequestAsync } from '../../../store/posts/postsAction';
+import { postsSlice } from '../../../store/posts/postSlice';
 import style from './List.module.css';
 import Post from './Post';
 
@@ -12,7 +13,7 @@ export const List = () => {
   const { page } = useParams();
 
   useEffect(() => {
-    dispatch(postRequestAsync(page));
+    dispatch(postsSlice.actions.changePage(page));
   }, [page]);
 
   useEffect(() => {
@@ -27,14 +28,16 @@ export const List = () => {
       },
     );
 
-    observer.observe(endList.current);
+    setTimeout(() => {
+      observer.observe(endList.current);
+    }, 500);
 
     return () => {
       if (endList.current) {
         observer.unobserve(endList.current);
       }
     };
-  }, [endList.current]);
+  }, []);
   return (
     <>
       <ul className={style.list}>
