@@ -12,6 +12,7 @@ export const Main = () => (
       <Tabs />
       <Routes>
         <Route path='/' element={<Start />} />
+        <Route path='/auth' element={<Start />} />
         <Route path='/category/:page' element={<List />}>
           <Route path='post/:id' element={<Modal />} />
         </Route>
